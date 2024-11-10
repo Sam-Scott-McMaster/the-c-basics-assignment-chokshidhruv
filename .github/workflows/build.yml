@@ -33,11 +33,11 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: Ctest
-        path: ./tests./test_results.txt
+        path: ./tests/test_results.txt
 
     - name: Upload Coverage Report
       if: ${{ always() }}
       uses: actions/upload-artifact@v4
       with:
         name: Coverage Report
-        path: ./tests./coverage_report.txt
+        path: ./tests/coverage_report.txt
