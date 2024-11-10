@@ -22,8 +22,14 @@ void rangeProvided(int base, long startInt, long finishInt) {
 
 void rangeNotProvided(int base){
     long userInputInt;
+    long result = 0;
     
-    while (scanf("%ld", &userInputInt) != EOF){
+    while ((result = scanf("%ld", &userInputInt)) != EOF){
+
+        if (result == 0){
+            puts("Error: Non-long-int token encountered");
+            exit(1);
+        }
 
         if (userInputInt == 0){
             printf("0\n");
