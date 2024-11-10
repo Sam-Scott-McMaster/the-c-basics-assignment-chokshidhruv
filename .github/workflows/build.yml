@@ -18,17 +18,18 @@ jobs:
       with:
         name: Convert Utility
         path: ./convert
-        
-  # tests:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - uses: actions/checkout@v4
+  
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
 
     - name: Run/Build Tests
       run: make ctest; cd tests; ./test_script >test_results.txt; gcov ../ctest-convert.c >coverage_report.txt
         
     - name: Upload Test Results
       if: ${{ always() }}
+
       uses: actions/upload-artifact@v4
       with:
         name: Ctest
@@ -39,4 +40,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: Coverage Report
-        path: ./coverage_report.txt
+        path: ./tests./coverage_report.txt
