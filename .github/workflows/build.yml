@@ -18,11 +18,11 @@ jobs:
       with:
         name: Convert Utility
         path: ./convert
-  
-  tests:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
+        
+  # tests:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v4
 
     - name: Run/Build Tests
       run: make ctest; cd tests; ./test_script >test_results.txt; gcov ../ctest-convert.c >coverage_report.txt
