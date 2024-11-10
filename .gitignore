@@ -1,5 +1,5 @@
 convert
 ctest
-convert.c.gcov
-ctest-convert.gcda
-ctest-convert.gcno
+*.gcov
+*.gcda
+*.gcno
