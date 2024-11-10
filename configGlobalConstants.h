@@ -1,0 +1,5 @@
+#define DEFAULT_BASE 16
+#define MAX_BASE 36
+#define MIN_BASE 2
+#define MAX_LONG 2147483647
+#define MIM_LONG -2147483648

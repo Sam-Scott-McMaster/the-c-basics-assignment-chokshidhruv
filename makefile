@@ -1,5 +1,5 @@
-convert: convert.c
-	gcc -o convert convert.c
+convert: main.c configGlobalConstants.h checkRangeMode.c checkRangeMode.h checkCmdLineArgs.c checkCmdLineArgs.h convert.c convert.h
+	gcc -o convert main.c configGlobalConstants.h checkRangeMode.c checkRangeMode.h checkCmdLineArgs.c checkCmdLineArgs.h convert.c convert.h
 
-ctest: convert.c
-	gcc -o ctest --coverage convert.c
+ctest: main.c configGlobalConstants.h checkRangeMode.c checkRangeMode.h checkCmdLineArgs.c checkCmdLineArgs.h convert.c convert.h
+	gcc -o ctest --coverage main.c configGlobalConstants.h checkRangeMode.c checkRangeMode.h checkCmdLineArgs.c checkCmdLineArgs.h convert.c convert.h
