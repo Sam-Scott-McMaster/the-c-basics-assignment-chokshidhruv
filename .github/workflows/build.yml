@@ -40,7 +40,6 @@ jobs:
           name: Ctest
           path: ./test_results.txt
 
-
     # - name: Upload Coverage Report
     #   if: ${{ always() }}
     #   uses: actions/upload-artifact@v4
