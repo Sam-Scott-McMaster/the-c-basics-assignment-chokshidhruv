@@ -24,14 +24,16 @@
 
 int main(int argc, char *argv[]) {
     int base = DEFAULT_BASE;       
-    long startInt = 0, finishInt = 10;
+    long startInt;
+    long finishInt;
 
-    checkCmdLineArg(argc, argv, &base, &startInt, &finishInt);
+    char checkForRange = checkCmdLineArg(argc, argv, &base, &startInt, &finishInt);
 
-    if (startInt == 0 || finishInt == 0) {
-        rangeNotProvided(base);
-    } else {
+    if (checkForRange == 'Y') {
         rangeProvided(base, startInt, finishInt);
+    } 
+    else {
+        rangeNotProvided(base);
     }
 
     exit(0);

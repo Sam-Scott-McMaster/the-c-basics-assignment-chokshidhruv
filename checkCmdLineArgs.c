@@ -60,8 +60,9 @@ void displayHelpInfo() {
 
 
 // Function that validates command line arguments and checks if its correct - if not, it outputs error messages to stderr
-void checkCmdLineArg(int argc, char *argv[], int *base, long *startInt, long *finishInt) {
+char checkCmdLineArg(int argc, char *argv[], int *base, long *startInt, long *finishInt) {
     *base = DEFAULT_BASE;  
+    char checkForRange = 'N';
 
     for (int i = 1; i < argc; i++) {
 
@@ -83,7 +84,8 @@ void checkCmdLineArg(int argc, char *argv[], int *base, long *startInt, long *fi
                 exit(1);
             }
             *startInt = atol(argv[++i]);  
-            *finishInt = atol(argv[++i]);  
+            *finishInt = atol(argv[++i]);
+            checkForRange = 'Y';  
         }
 
         else if (strcmp(argv[i], "--help") == 0) {
@@ -96,4 +98,6 @@ void checkCmdLineArg(int argc, char *argv[], int *base, long *startInt, long *fi
             exit(1);
         }
     }
+    
+    return checkForRange;
 }

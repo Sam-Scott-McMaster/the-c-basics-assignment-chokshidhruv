@@ -2,4 +2,4 @@
 
 void displayBadFlag();
 void displayHelpInfo();
-void checkCmdLineArg(int argc, char *argv[], int *base, long *startInt, long *finishInt);
+char checkCmdLineArg(int argc, char *argv[], int *base, long *startInt, long *finishInt);

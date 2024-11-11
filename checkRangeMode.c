@@ -33,12 +33,11 @@ void rangeProvided(int base, long startInt, long finishInt) {
     long finish = finishInt;
 
     for (long start = startInt; start <= finish; start++) {
-
+        
         if (start == 0) {
             printf("0\n");
         }
         else {
-            
             convert(start, base);
             printf("\n"); 
         }
