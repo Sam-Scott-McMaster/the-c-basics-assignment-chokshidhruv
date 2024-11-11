@@ -1,1 +1,19 @@
-Help information: Update later!!
+convert - Convert number from Base (10) to Base (1 < Base < 37) Number
+Version 1.0.0
+Convert user-inputted number decimal base to another.
+Usage: convert [-b BASE] [-r START FINISH]
+       1 < BASE < 37
+       START and FINISH are long integers
+Default base for conversion is 16 and user-input is decimal (base 10)
+Examples: 
+./convert -b 2 -r -1 2
+Output: 
+-1
+0
+1
+2
+./convert -b 16
+Input: 
+10
+Output: 
+A

@@ -37,7 +37,25 @@ void displayBadFlag() {
 
 // Function that outputs help to stdout when --help flag is provided
 void displayHelpInfo() {
-    printf("Help information: Update later!!\n");
+    printf("convert - Convert number from Base (10) to Base (1 < Base < 37) Number\n");
+    printf("Version 1.0.0\n");
+    printf("Convert user-inputted number decimal base to another.\n");
+    printf("Usage: convert [-b BASE] [-r START FINISH]\n");
+    printf("       1 < BASE < 37\n");
+    printf("       START and FINISH are long integers\n");
+    printf("Default base for conversion is 16 and user-input is decimal (base 10)\n");
+    printf("Examples: \n");
+    printf("./convert -b 2 -r -1 2\n");
+    printf("Output: \n");
+    printf("-1\n");
+    printf("0\n");
+    printf("1\n");
+    printf("2\n");
+    printf("./convert -b 16\n");
+    printf("Input: \n");
+    printf("10\n");
+    printf("Output: \n");
+    printf("A\n");
 }
 
 
