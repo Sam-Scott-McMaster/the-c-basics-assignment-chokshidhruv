@@ -8,27 +8,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+    - uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install -y gcc gcov
-
-      - name: Build convert
-        run: make convert
-
-      - name: Upload convert
-        uses: actions/upload-artifact@v4
-        with:
-          name: Convert Utility
-          path: ./convert
+    - name: Build convert
+      run: make convert
+        
+    - name: Upload convert
+      uses: actions/upload-artifact@v4
+      with:
+        name: Convert Utility
+        path: ./convert
   
   tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install -y gcc gcov
+    - uses: actions/checkout@v4
 
       - name: Compile ctest with coverage
         run: make ctest
@@ -46,7 +40,7 @@ jobs:
           name: Ctest
           path: ./test_results.txt
 
-    # Uncomment if you want to upload coverage reports
+
     # - name: Upload Coverage Report
     #   if: ${{ always() }}
     #   uses: actions/upload-artifact@v4
