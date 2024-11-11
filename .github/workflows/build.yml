@@ -24,21 +24,21 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-      - name: Compile ctest with coverage
-        run: make ctest
+    - name: Compile ctest with coverage
+      run: make ctest
 
-      - name: Run test script
-        run: ./test_script > test_results.txt
+    - name: Run test script
+      run: ./test_script > test_results.txt
 
-      - name: Run gcov
-        run: gcov ctest-main.c
+    - name: Run gcov
+      run: gcov ctest-main.c
 
-      - name: Upload Test Results
-        if: ${{ always() }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: Ctest
-          path: ./test_results.txt
+    - name: Upload Test Results
+      if: ${{ always() }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: Ctest
+        path: ./test_results.txt
 
     # - name: Upload Coverage Report
     #   if: ${{ always() }}
