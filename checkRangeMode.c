@@ -27,7 +27,7 @@ void rangeNotProvided(int base){
     while ((result = scanf("%ld", &userInputInt)) != EOF){
 
         if (result == 0){
-            puts("Error: Non-long-int token encountered");
+            fprintf(stderr, "Error: Non-long-int token encountered\n");
             exit(1);
         }
 
@@ -36,7 +36,7 @@ void rangeNotProvided(int base){
         }
         else{
             if (userInputInt > MAX_LONG || userInputInt < MIM_LONG){
-                puts("Error: Non-long-int token encountered");
+                fprintf(stderr, "Error: Non-long-int token encountered\n");
                 exit(1);
             }
             else{

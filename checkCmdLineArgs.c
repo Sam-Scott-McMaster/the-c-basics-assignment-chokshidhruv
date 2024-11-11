@@ -5,10 +5,11 @@
 
 
 void displayBadFlag() {
-    printf("Usage: convert [-b BASE] [-r START FINISH]\n");
-    printf("       1 < BASE < 37\n");
-    printf("       START and FINISH are long integers\n");
+    fprintf(stderr, "Usage: convert [-b BASE] [-r START FINISH]\n");
+    fprintf(stderr, "       1 < BASE < 37\n");
+    fprintf(stderr, "       START and FINISH are long integers\n");
 }
+
 
 void displayHelpInfo() {
     printf("Help information: Update later!!\n");
