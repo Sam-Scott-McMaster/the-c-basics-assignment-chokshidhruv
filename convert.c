@@ -3,20 +3,35 @@
 #include <string.h>
 #include "convert.h"
 
+/*
+ * A simple function that converts a given number in base(10) to a specified base (by user) and display the result to stdout.
+ * 
+ * The function takes in number (long) and base (int) as arguments and calls itself recursively to convert the number.
+ * 
+ * If the number's remainder exceeds 10, it uses the alphabet characters from A-Z
+ * 
+ * 
+ * Author:
+ * Dhruv Chokshi, McMaster University, November 2024
+ */
+
+
+// Recursive function to convert a number to the specified base
 void convert(long number, int base) {
 
     if (number == 0) {
         return; 
     }
 
-    if (number < 0) {
+    if (number < 0) { 
         printf("-");
         number = -number;
     }
 
-    long remainder = number % base;
-    long quotient = number / base;
+    long remainder = number % base; // finding remainder provides the conversion number for the right most decimal digit
+    long quotient = number / base; // finding quotient shifts the digits right to the remaining digits
 
+    // Recursive call
     convert(quotient, base);
 
     if (remainder < 10) {
