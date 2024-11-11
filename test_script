@@ -78,7 +78,19 @@ test() {
 test './ctest' 'inp1.txt' 'ex_out1.txt' 'empty.txt'
 test './ctest -b 2' 'inp2.txt' 'ex_out2.txt' 'empty.txt'
 test './ctest -a' 'empty.txt' 'empty.txt' 'usage.txt'
-
+# My added test cases:
+test './ctest -b 10 -r -5 1' 'empty.txt' 'ex_out3.txt' 'empty.txt' #base case
+test './ctest -b 100' 'empty.txt' 'empty.txt' 'usage.txt' #invalid base-input case
+test './ctest -b 36 -r' 'empty.txt' 'empty.txt' 'usage.txt' #invalid argument inputs case
+test './ctest -b 2 -r 5 1' 'empty.txt' 'empty.txt' 'empty.txt' #invalid range case
+test './ctest --help' 'empty.txt' 'help.txt' 'empty.txt' #--help flag case
+test './ctest -b' 'empty.txt' 'empty.txt' 'usage.txt' #invalid base arguments case
+test './ctest -b 2 -r 5 1' 'empty.txt' 'empty.txt' 'empty.txt' #invalid range case
+test './ctest -b 36 -r 1 35' 'empty.txt' 'ex_out4.txt' 'empty.txt' #check if all chars (A-Z) work
+test './ctest -b 10' 'inp3.txt' 'ex_out5.txt' 'nonlong.txt' #invalid - non long num input
+test './ctest -b 10' 'inp4.txt' 'empty.txt' 'nonlong.txt' #invalid input; inputting words - non long num input
+test './ctest -b 5' 'inp5.txt' 'ex_out6.txt' 'empty.txt' #user-input 0s
+test './ctest' 'empty.txt' 'empty.txt' 'empty.txt' #entirely empty inputs
 
 # clean up
 rm test_err.txt test_out.txt

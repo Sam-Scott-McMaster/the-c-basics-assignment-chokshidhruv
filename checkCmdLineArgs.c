@@ -37,10 +37,6 @@ void checkCmdLineArg(int argc, char *argv[], int *base, long *startInt, long *fi
             }
             *startInt = atol(argv[++i]);
             *finishInt = atol(argv[++i]);
-
-            if(*startInt > *finishInt){
-                exit(1);
-            }
         }
         else if (strcmp(argv[i], "--help") == 0) {
             displayHelpInfo();

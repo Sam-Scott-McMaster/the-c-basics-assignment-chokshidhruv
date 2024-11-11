@@ -17,7 +17,6 @@ void rangeProvided(int base, long startInt, long finishInt) {
             printf("\n");
         }
     }
-
 }
 
 void rangeNotProvided(int base){
